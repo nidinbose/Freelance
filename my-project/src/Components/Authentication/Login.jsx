@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <div className="font-[sans-serif] bg-white flex items-center justify-center md:h-screen p-4">
       <ToastContainer />
-      <div className=" border max-w-6xl max-md:max-w-lg  p-6">
+      <div className="  max-w-6xl max-md:max-w-lg  p-6">
         <a href="javascript:void(0)">
        
         </a>

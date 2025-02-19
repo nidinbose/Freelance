@@ -7,6 +7,13 @@ import "react-toastify/dist/ReactToastify.css";
 const AdminRegister = () => {
   const navigate = useNavigate();
 
+  const role = localStorage.getItem("role");
+
+  if(role !=="admin")
+  {
+    navigate('/login ')
+    return null
+  }
   const [formData, setFormData] = useState({
     username: "",
     email: "",

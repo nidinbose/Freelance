@@ -14,6 +14,8 @@ import LatestNews from '../LatestNews'
 import Subscribe from '../Payment&refrel/Subscribe'
 import Referrals from '../Payment&refrel/Refrals'
 import Floating from './Floating'
+import About from './About'
+import ContactUs from './Contactus'
 
 const Site = () => {
   return (
@@ -28,9 +30,10 @@ const Site = () => {
           <JobConsultancy/>
           <VisitingVisa/>
           <Studyabroad/>
-          <Subscribe/>
+                <Subscribe/>
           <Why/>
           <Consultant/>
+          <ContactUs/>
           {/* <HappyClients/> */}
           {/* <Referrals/> */}
         

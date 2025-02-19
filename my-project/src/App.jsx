@@ -23,6 +23,9 @@ import News from './Components/Admin/News'
 import ForgotPassword from './Components/Authentication/Forgotpassword'
 import ResetPassword from './Components/Authentication/Resetpassword'
 import Services from './Components/Services'
+import Navigation from './Components/Admin/Navigation'
+import About from './Components/Site/About'
+import Contactus from './Components/Site/Contactus'
 
 const App = () => {
   return (
@@ -53,6 +56,9 @@ const App = () => {
   <Route path='/reset' Component={ForgotPassword}/>
   <Route path='/newpass' Component={ResetPassword}/>
   <Route path='/services' Component={Services}/>
+  <Route path='/nav' Component={Navigation}/>
+  <Route path='/aboutus' Component={About}/>
+  <Route path='/contact' Component={Contactus}/>
 
   
 

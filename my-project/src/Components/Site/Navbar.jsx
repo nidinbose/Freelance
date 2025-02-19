@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-           <nav className="bg-blue-700 shadow-md ">
+           <nav className="bg-[#0055a6] shadow-md ">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to={`/`}>
         <div className="text-2xl font-bold text-red-600 flex items-center">
@@ -41,7 +41,18 @@ const Navbar = () => {
               <FaWhatsapp className="text-green-500 text-lg mr-2" />
               <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white">WhatsApp</a>
             </div>
-            
+          <Link to={`/aboutus`}>
+          <div className="flex items-center">
+            <p className="text-white text-lg mr-2">|</p>
+              <a href="" target="_blank" rel="noopener noreferrer" className="text-white">About us</a>
+            </div>
+          </Link>
+         <Link to={`/contact`}>
+         <div className="flex items-center">
+              <p className="text-white text-lg mr-2">|</p>
+              <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white">Contact us</a>
+            </div>
+         </Link>
           </div>
           <div className="md:hidden">
             <button
@@ -130,7 +141,7 @@ const Navbar = () => {
             </a>
           </div>
          </Link>
-         <Link to={`/user`} className="w-full">
+         <Link to={`/nav`} className="w-full">
          <div className="group text-center w-full flex items-center justify-center h-12 border hover:bg-red-400 hover:border-red-500 mb-2">
             <a href="#link5" className="text-gray-800 group-hover:text-white font-semibold">
              User
@@ -185,7 +196,7 @@ const Navbar = () => {
             </a>
           </div>
          </Link>
-        <Link to={`/user`}>
+        <Link to={`/nav`}>
         <div className="group text-center w-32 flex items-center justify-center h-12 border hover:bg-red-400 hover:border-red-500">
           <FaUser className="mr-1"/> User
           </div>

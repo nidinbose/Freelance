@@ -18,6 +18,11 @@ const Refrals = () => {
           `http://localhost:3003/api/getsub/${userId}`
         );
         setIsSubscribed(data.subscribed);
+
+        if(data){
+          navigate("/user")
+        }
+
       } catch (error) {
         console.error("Error checking subscription:", error);
       }

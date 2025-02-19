@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddCountry = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +13,16 @@ const AddCountry = () => {
     Paragraph: "",
     About: "",
   });
+  const navigate = useNavigate();
+
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const role = localStorage.getItem("role");
+  if (role !== "admin") {
+    alert("Access declined. Only admins can navigate to this page.");
+    window.location.href = "/"; 
+    return null; 
+  }
 
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
