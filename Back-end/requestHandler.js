@@ -79,14 +79,14 @@ export async function getData(req,res){
 export async function userRegester(req,res){
   const {name,email,referredBy,password,cpassword,subscription,otp,role}=req.body;
 
-   if(!(name&&email&&referredBy&&password&&cpassword&&subscription&&role))
+   if(!(name&&email&&password&&cpassword&&subscription&&role))
     return res.status(400).send("fill all fields")
 
    if(password!==cpassword)
     return res.status(404).send("password not matched")
 
 bcrypt.hash(password,10).then(async(hpassword)=>{
-user.create({name,password:hpassword,email,role,otp}).then(()=>{
+user.create({name,password:hpassword,referredBy,email,role,otp}).then(()=>{
     return res.status(201).send({msg:"successfully created"})
 
 })

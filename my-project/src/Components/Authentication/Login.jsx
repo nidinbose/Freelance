@@ -39,12 +39,12 @@ const Login = () => {
 
         <div className="grid md:grid-cols-2 items-center gap-8">
           <div className="max-md:order-1">
-            <img src="https://readymadeui.com/signin-image.webp" className="w-full aspect-[12/11] object-contain" alt="login-image" />
+            <img src="https://benefitzintl.com/wp-content/uploads/2024/01/benifitslogo.png" className="w-full aspect-[12/11] object-contain" alt="login-image" />
           </div>
 
-          <form className="md:max-w-md w-full mx-auto" onSubmit={handleSubmit}>
+          <form className="md:max-w-md w-full mx-auto border p-7" onSubmit={handleSubmit}>
             <div className="mb-12">
-              <h3 className="text-4xl font-bold text-teal-600">Sign in</h3>
+              <h3 className="text-4xl font-bold text-[#0055a6]">Sign in</h3>
             </div>
 
             <div>
@@ -109,11 +109,11 @@ const Login = () => {
             </div>
 
             <div className="mt-12">
-              <button type="submit" className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold tracking-wide rounded-md text-white bg-teal-600 hover:bg-green-500 focus:outline-none">
+              <button type="submit" className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold tracking-wide rounded-md text-white bg-[#0055a6] hover:bg-green-500 focus:outline-none">
                 Sign in
               </button>
               <div>
-                <p className="text-gray-800 text-sm text-center mt-6 flex">Don't have an account? <Link to={`/regester`}><h1 href="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</h1></Link> </p>
+                {/* <p className="text-gray-800 text-sm text-center mt-6 flex">Don't have an account? <Link to={`/regester`}><h1 href="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</h1></Link> </p> */}
                 <p className="text-gray-800 text-sm text-center mt-6 flex">Are you an admin <Link to={`/adminlogin`}><h1 href="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Login</h1></Link> </p>
               </div>
             </div>

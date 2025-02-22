@@ -117,17 +117,29 @@ const Register = () => {
               </div>
 
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">referredBy</label>
-                <input
-                  name="referredBy"
-                  type="text"
-                  required
-                  value={formData.referredBy}
-                  onChange={handleChange}
-                  className="bg-transparent border border-gray-400 w-full text-gray-800 text-sm pl-4 pr-10 py-2.5 rounded focus:border-black outline-none"
-                  placeholder="Refferal id"
-                />
-              </div>
+  <label className="text-gray-800 text-sm mb-2 block">Referred By</label>
+  <div className="flex items-center gap-2">
+    <input
+      name="referredBy"
+      type="text"
+      required
+      value={formData.referredBy}
+      onChange={handleChange}
+      className="bg-transparent border border-gray-400 w-full text-gray-800 text-sm pl-4 pr-10 py-2.5 rounded focus:border-black outline-none"
+      placeholder="Referral ID"
+    />
+    <select
+      name="referredBy"
+      value={formData.referredBy}
+      onChange={handleChange}
+      className="bg-transparent border border-gray-400 text-gray-800 text-sm px-4 py-2.5 rounded focus:border-black outline-none"
+    >
+      <option value="">Select</option>
+      <option value="Not a referral user">Not a referral user</option>
+    </select>
+  </div>
+</div>
+
 
               <button type="submit" className="w-full bg-blue-600 text-white py-2.5 rounded font-bold hover:bg-blue-700 transition">Register</button>
           

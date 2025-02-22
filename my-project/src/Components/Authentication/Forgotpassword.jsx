@@ -11,19 +11,20 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/newpass");
 
     try {
-      toastId = toast.info("Sending OTP...", { 
+      // Show loading toast
+      toastId = toast.info("Verifying email & sending OTP...", { 
         autoClose: false, 
         closeOnClick: false, 
         draggable: false, 
-        progress: undefined
+        progress: undefined 
       });
 
       const res = await axios.post("http://localhost:3003/api/forgot", { email });
 
       if (res.data.success) {
+        // Update toast message
         toast.update(toastId, {
           render: "OTP sent successfully!",
           type: "success",
@@ -32,9 +33,12 @@ const ForgotPassword = () => {
           draggable: true,
           progress: undefined
         });
+
+        // Navigate only after success
+        navigate("/newpass");
       } else {
         toast.update(toastId, {
-          render: res.data.msg || "Something went wrong.",
+          render: res.data.msg || "Invalid email or something went wrong.",
           type: "error",
           autoClose: 3000,
           closeOnClick: true,
@@ -45,7 +49,7 @@ const ForgotPassword = () => {
     } catch (error) {
       console.error("Error details:", error);
       toast.update(toastId, {
-        render: error.response?.data?.msg || "An error occurred",
+        render: error.response?.data?.msg || "An error occurred. Try again.",
         type: "error",
         autoClose: 3000,
         closeOnClick: true,
@@ -57,11 +61,14 @@ const ForgotPassword = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-[url('https://www.aud.edu/media/1412/shutterstock_493536808_visiting-students_traveltips.jpg')] bg-cover p-2">
-           <div className="bg-white/40 p-8  w-full max-w-md">
-           <img src="https://benefitzintl.com/wp-content/uploads/2024/01/benifitslogo.png" alt=""  className="bg-cover p-6"/>
+      <div className="bg-white/40 p-8 w-full max-w-md">
+        <img 
+          src="https://benefitzintl.com/wp-content/uploads/2024/01/benifitslogo.png" 
+          alt="Benefits Logo" 
+          className="bg-cover p-6"
+        />
         <h2 className="text-2xl text-center text-gray-700 mb-6 font-bold">Forgot Password</h2>
         <form onSubmit={handleSubmit}>
-          {/* <p className="mb-5 font-semibold text-gray-700">Enter your email</p> */}
           <div className="mb-4">
             <input
               type="email"

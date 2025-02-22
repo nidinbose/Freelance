@@ -3,6 +3,7 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import { FaCrown } from "react-icons/fa6";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,22 +26,8 @@ const Navbar = () => {
         </Link>
 
           <div className="hidden md:flex items-center space-x-6">
-          <div className="text-white">
-          <div className="flex items-center border-r pr-4">
-              <FaPhoneAlt className="text-lg mr-2" />
-              <a href="tel:+123456789" className="text-white">Call: 6235846558</a>
-              
-            </div>
-            <div className="flex items-center border-r pr-4">
-              <FaPhoneAlt className="text-lg mr-2" />
-              <a href="tel:+123456789" className="text-white">Call: 8089319608</a>
-              
-            </div>
-          </div>
-            <div className="flex items-center">
-              <FaWhatsapp className="text-green-500 text-lg mr-2" />
-              <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white">WhatsApp</a>
-            </div>
+       
+           
           <Link to={`/aboutus`}>
           <div className="flex items-center">
             <p className="text-white text-lg mr-2">|</p>
@@ -53,6 +40,30 @@ const Navbar = () => {
               <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white">Contact us</a>
             </div>
          </Link>
+
+         <Link to={`/regester`}>
+         <div className="flex items-center">
+              <p className="text-white text-lg mr-2">|</p>
+              <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white flex items-center gap-2">Subscribe <FaCrown  className="text-[#FFF200]"/></a>
+              <p className="text-white text-lg ml-2">|</p>
+            </div>
+         </Link>
+         <div className="flex items-center ">
+              <FaWhatsapp className="text-green-500 text-lg mr-2" />
+              <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="text-white">WhatsApp</a>
+            </div>
+         <div className="text-white">
+          <div className="flex items-center border-l pl-4">
+              <FaPhoneAlt className="text-lg mr-2" />
+              <a href="tel:+123456789" className="text-white">Call: 6235846558</a>
+              
+            </div>
+            <div className="flex items-center border-l pl-4">
+              <FaPhoneAlt className="text-lg mr-2" />
+              <a href="tel:+123456789" className="text-white">Call: 8089319608</a>
+              
+            </div>
+          </div>
           </div>
           <div className="md:hidden">
             <button
